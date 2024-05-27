@@ -1,27 +1,28 @@
 
 import Image from "next/image";
-import Head from "./component/Head";
-import Section from "./component/Section";
+import Head from "./componentchall1/Head";
+import Section from "./componentchall1/Section";
 
-import Div from "./component/Div";
+import Div from "./componentchall1/Div";
 
 
 export default function Home() {
   return (
     <>
-    
-      <Head/>
+      
+       <Head/>
       <div className="flex justify-evenly">
         <div>
-          <Section/>
-          <Section/>
-          <Section/>
+          <Section Text="hello world" content="i'am hadil yahi"/>
+          <Section Text="Hi noucha" content="hi i'am nocha sister of hadil"/>
+          <Section />
           <Section/>
         </div>
         <div>
           <Div/>
         </div>
-      </div>
+      </div> 
+      
     </>
   );
 }
