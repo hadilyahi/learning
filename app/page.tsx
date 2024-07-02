@@ -1,35 +1,38 @@
 
 import Image from "next/image";
-import Head from "./componentchall1/Head";
-import Section from "./componentchall1/Section";
-
-import Div from "./componentchall1/Div";
+import Head from "./component/Head";
+import Section from "./component/Section";
+import Button from "./component/Button";
+import axios from 'axios'
 const section= [
   {id:1,Text:"hello world" ,content:"i'am hadil yahi"},
   {id:2,Text:"hello" ,content:"i'am Noucha"},
-  {id:3,Text:"hiiiiii" ,content:"i'am khalil"},
-  {id:4,Text:" world" ,content:"i'am chihab"},
 ]
-
-export default function Home() {
+const buttonTitles = [
+  { id:1, title: "Click me"},
+  { id:2, title: "Click we" },  
+];
+ function Home() {
 
   return (
     <>
       
        <Head/>
-      <div className="flex justify-evenly">
+      <div className="flex justify-center ">
         <div>
          {section.map((preperis) =>(
             
             <Section key={preperis.id} Text={preperis.Text} content={preperis.content}/>
          ))}
-          
-        </div>
-        <div>
-          <Div/>
+         <div className="flex justify-between mt-8">
+              {buttonTitles.map((button) => (
+                <Button key={button.id} title={button.title} />
+            ))}
+         </div>
         </div>
       </div> 
       
     </>
   );
 }
+export default Home ;
