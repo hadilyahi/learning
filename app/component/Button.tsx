@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import axios from "axios";
 import { useState } from "react";
 
@@ -7,13 +7,16 @@ interface ButtonProps {
 }
 
 function Button(props: ButtonProps) {
-  const [quote, setQuote] = useState<{ content: string; author: string } | null>(null);
+  const [quote, setQuote] = useState<{
+    content: string;
+    author: string;
+  } | null>(null);
 
   const getQuote = () => {
     axios
       .get("https://api.quotable.io/random")
       .then((res) => {
-        setQuote(res.data); 
+        setQuote(res.data);
       })
       .catch((err) => {
         console.log(err);

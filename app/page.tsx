@@ -4,6 +4,7 @@ import Head from "./component/Head";
 import Section from "./component/Section";
 import Button from "./component/Button";
 import axios from 'axios'
+import UseState from "./Hooks/UseState";
 const section= [
   {id:1,Text:"hello world" ,content:"i'am hadil yahi"},
   {id:2,Text:"hello" ,content:"i'am Noucha"},
@@ -28,6 +29,9 @@ const buttonTitles = [
               {buttonTitles.map((button) => (
                 <Button key={button.id} title={button.title} />
             ))}
+         </div>
+         <div className="mt-16">
+            <UseState/>
          </div>
         </div>
       </div> 
