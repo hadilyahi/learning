@@ -5,6 +5,7 @@ import Section from "./component/Section";
 import Button from "./component/Button";
 import axios from 'axios'
 import UseState from "./Hooks/UseState";
+import Create from "./componentApi/Create";
 const section= [
   {id:1,Text:"hello world" ,content:"i'am hadil yahi"},
   {id:2,Text:"hello" ,content:"i'am Noucha"},
@@ -19,7 +20,7 @@ const buttonTitles = [
     <>
       
        <Head/>
-      <div className="flex justify-center ">
+      <div className="flex justify-evenly">
         <div>
          {section.map((preperis) =>(
             
@@ -34,6 +35,9 @@ const buttonTitles = [
             <UseState/>
          </div>
         </div>
+         <div className="m-14">
+            <Create/>
+         </div>
       </div> 
       
     </>
