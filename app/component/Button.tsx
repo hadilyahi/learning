@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 function Button(props: ButtonProps) {
-  const [quote, setQuote] = useState<{
+  const [click, setClick] = useState<{
     content: string;
     author: string;
   } | null>(null);
@@ -16,7 +16,7 @@ function Button(props: ButtonProps) {
     axios
       .get("https://api.quotable.io/random")
       .then((res) => {
-        setQuote(res.data);
+        setClick(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -33,10 +33,10 @@ function Button(props: ButtonProps) {
           >
             {props.title}
           </button>
-          {quote && (
+          {click && (
             <div className="flex ">
-              <p>{quote.content}</p>
-              <p>— {quote.author}</p>
+              <p>{click.content}</p>
+              
             </div>
           )}
         </div>

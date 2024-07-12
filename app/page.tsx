@@ -6,6 +6,7 @@ import Button from "./component/Button";
 import axios from 'axios'
 import UseState from "./Hooks/UseState";
 import Create from "./componentApi/Create";
+import UseEffect from "./Hooks/UseEffect";
 const section= [
   {id:1,Text:"hello world" ,content:"i'am hadil yahi"},
   {id:2,Text:"hello" ,content:"i'am Noucha"},
@@ -18,10 +19,12 @@ const buttonTitles = [
 
   return (
     <>
-      
+       
+
        <Head/>
+       
       <div className="flex justify-evenly">
-        <div>
+        <div className="m-16">
          {section.map((preperis) =>(
             
             <Section key={preperis.id} Text={preperis.Text} content={preperis.content}/>
@@ -31,10 +34,11 @@ const buttonTitles = [
                 <Button key={button.id} title={button.title} />
             ))}
          </div>
-         <div className="mt-16">
-            <UseState/>
-         </div>
         </div>
+         <div className="m-16 flex gap-16">
+            <UseState/>
+            <UseEffect/>
+         </div>
          <div className="m-14">
             <Create/>
          </div>
