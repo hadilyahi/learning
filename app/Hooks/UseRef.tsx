@@ -1,9 +1,17 @@
 "use client";
-import { useState,useEffect } from "react";
-const UseEffect = () => {
+import { useState,useEffect ,useRef} from "react";
+const UseRef = () => {
   const [counter, setcounter] = useState(0);
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
+
+    const inputRef = useRef<HTMLInputElement>(null);
+  
+    const focusInput = () => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    };
   const zayidConter = () => {
     setcounter(counter + 1);
   };
@@ -11,7 +19,7 @@ const UseEffect = () => {
     setcounter(counter - 1);
   };
   const handleTitle = () => {
-    setTitle("Hadil Tech");
+    setTitle("");
   };
   useEffect(()=> {
     console.log("inside useEffect 1");
@@ -28,6 +36,7 @@ const UseEffect = () => {
     console.log("inside useEffect 2");
     document.title = `You have clicked ${counter} time`;
   },[counter])
+  
   
   return (
     <div>
@@ -54,6 +63,8 @@ const UseEffect = () => {
           -{" "}
         </button>
       </div>
+      <input ref={inputRef} className="mb-4 border-2 border-black " type="text" />
+      <br />
       <button
       onClick={handleTitle}
        className="border-white border-2 bg-blue-500 text-white hover:bg-blue-600  p-4">
@@ -62,4 +73,4 @@ const UseEffect = () => {
     </div>
   );
 };
-export default UseEffect;
+export default UseRef;
